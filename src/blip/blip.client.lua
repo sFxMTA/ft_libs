@@ -15,19 +15,19 @@ local Blip = {}
 -- Show Blip
 --
 function Blip:Show()
-
-    self.blip = AddBlipForCoord(self.x, self.y, self.z)
-    SetBlipSprite(self.blip, self.imageId)
-    SetBlipAsShortRange(self.blip, self.shortRange)
-    SetBlipColour(self.blip, self.colorId)
-    SetBlipScale(self.blip, self.scale)
-    BeginTextCommandSetBlipName("STRING")
-    AddTextComponentString(self.text)
-    EndTextCommandSetBlipName(self.blip)
-    if self.rotation ~= nil then
-        SetBlipRotation(self.blip, self.rotation)
+    if self.enable then
+        self.blip = AddBlipForCoord(self.x, self.y, self.z)
+        SetBlipSprite(self.blip, self.imageId)
+        SetBlipAsShortRange(self.blip, self.shortRange)
+        SetBlipColour(self.blip, self.colorId)
+        SetBlipScale(self.blip, self.scale)
+        BeginTextCommandSetBlipName("STRING")
+        AddTextComponentString(self.text)
+        EndTextCommandSetBlipName(self.blip)
+        if self.rotation ~= nil then
+            SetBlipRotation(self.blip, self.rotation)
+        end
     end
-
 end
 
 --
